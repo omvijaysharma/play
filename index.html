@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omvijaysharma | play</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects" id="particles"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">omvijaysharma</h1>
+            <p class="tagline">play</p>
+        </header>
+        
+        <div class="games-grid">
+            <button class="game-card" onclick="openGame('2048')">
+                <div class="game-icon"><i class="fas fa-th-large"></i></div>
+                <h3 class="game-title">2048</h3>
+                <p class="game-description">Combine tiles with the same numbers to reach the 2048 tile.</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+            
+            <button class="game-card" onclick="openGame('gravity-rock')">
+                <div class="game-icon"><i class="fas fa-meteor"></i></div>
+                <h3 class="game-title">Gravity Rock</h3>
+                <p class="game-description">Navigate through space using gravitational forces.</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+            
+            <button class="game-card" onclick="openGame('ball-s-gravity')">
+                <div class="game-icon"><i class="fas fa-basketball-ball"></i></div>
+                <h3 class="game-title">Ball's Gravity</h3>
+                <p class="game-description">Control ball gravity, save yourself from danger.</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+            
+            <button class="game-card" onclick="openGame('300')">
+                <div class="game-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="game-title">300</h3>
+                <p class="game-description">300 math questions! can you solve them?</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+            
+            <button class="game-card" onclick="openGame('tetris')">
+                <div class="game-icon"><i class="fas fa-gamepad"></i></div>
+                <h3 class="game-title">Tetris</h3>
+                <p class="game-description">The classic block-stacking puzzle game.</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+            
+            <button class="game-card" onclick="openGame('my-fish')">
+                <div class="game-icon"><i class="fas fa-fish"></i></div>
+                <h3 class="game-title">My Fish</h3>
+                <p class="game-description">My fish is like flappy bird. Survive as long as you can.</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+
+            <button class="game-card" onclick="openGame('math')">
+                <div class="game-icon"><i class="fas fa-calculator"></i></div>
+                <h3 class="game-title">Math</h3>
+                <p class="game-description">Infinity math game to challenge your brain speed.</p>
+                <div class="play-btn">Play Now <i class="fas fa-arrow-right"></i></div>
+            </button>
+        </div>
+        
+        <footer>
+            <p class="footer-text">All games are available to play directly in your browser</p>
+            <p>Total Games: <span class="game-count">7</span></p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
