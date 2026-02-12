@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>2D Gravity Ball Game</title>
+    <link rel="stylesheet" href="ball.css">
+    </head>
+<body>
+    <!-- canvas -->
+    <canvas id="gameCanvas"></canvas>
+    <!-- scoro soind -->
+    <audio id="scoreSound" src="sources/score-up.mp3"></audio>
+    <!-- scoro -->
+    <div class="scoreDiv">
+        
+    <img src="sources/star.png" alt="" id="scoreImg">
+    <h2 id="scoro"> 0 </h2>
+    </div>
+    <!-- try again button -->
+    <a href="ball.html" id="restart"> Home </a>
+    <img src="sources/ball.png" alt="" id="ballImg">
+    <!-- start button -->
+    <button id="startBtn" onclick="start()"> Start </button>
+    <a href="info.html" id="menuBtn">!l!</a>
+    <div class="mosam"></div>
+    <div class="sun"></div>
+    <div class="moon"></div>
+    
+    
+    <!-- 
+    <button id="resetScore"> reset scoro </button> -->
+    <script src="ball.js"></script>
+</body>
+</html>
