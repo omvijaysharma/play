@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="stylesheet" href="style/default.css">
+    <link rel="stylesheet" href="style/math.css">
+</head>
+<body>
+<!------------------------------------------------------------------------ main canvas -->
+<canvas id="backgroundCanvas" onclick="menu('none','block')">
+</canvas>
+    
+<!------------------------------------------------------------------------------ level -->
+<strong id="level">0</strong>
+
+
+<!------------------------------------------------------------------------- first page -->
+<div class="first-page">
+    
+    <!---------------------- start button -->
+    <button id="start-btn" onclick="location.href='math.html'">start</button>
+
+    <!----------------------- menu button -->
+    <button id="menu-btn" onclick="menu('flex','none')">
+        <img src="src/img/menu.svg" alt="">
+    </button>
+
+    <!-------------------------- menu div -->
+    <div class="menu-div">
+        
+        <!------------- menu close button -->
+        <button id="cross-menu-btn" onclick="menu('none','block')"><- close</button>
+        
+        <!--------------------- audio div -->
+        <div class="audio-div">
+            
+            <!--------------------- music -->
+            <p> music </p>
+            <input id="music-range" type="range" min="0" max="100" value="100" oninput="volume('#music-range','MUSIC')">
+            
+            <!----------------- sound div -->
+            <p> sound </p>
+            <input id="sound-range" type="range" min="0" max="100" value="100" oninput="volume('#sound-range','SOUND')">
+            
+        </div>
+        
+        <!------------------ reset button -->
+        <button onclick="FOStyle('.reset-div','display','flex')"> reset </button>
+        
+        <!--------------------- reset div -->
+        <div class="reset-div">
+            <p> did you really went to reset game include (level,rank).</p>
+            <!----------------- reset yes -->
+            <button onclick="resetgame()">yes</button>
+            
+            <!------------------ reset no -->
+            <button onclick="FOStyle('.reset-div','display','none')">no</button>
+            
+        </div>
+        <!------------- terms & condition -->
+        <a href=""> terms & condition </a>
+        
+        <!---------------- privacy policy -->
+        <a href=""> privacy policy </a>
+        
+        <!------------- developer details -->
+        <div style="display: flex; padding: 20px 0; background: #00000087;">
+            
+            <!------------ Deleloper image-->
+            <img src="src/img/profile-img.jpg" alt="">
+            
+            <!----------- developer title -->
+            <p> developer & deginer </p>
+            <h4>vijay sharma</h4>
+        </div>
+    </div>
+</div>
+<!----------------------------------------------------------------------- loading page -->    
+<div class="loading-page">
+    <p id="loading-text"></p>
+</div>
+
+<!--------------------------------------------------------------------------------------->
+    <script src="js/default.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/canvars.js"></script>
+</body>
+</html>

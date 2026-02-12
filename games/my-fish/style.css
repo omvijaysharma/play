@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'GamingFont';
+  src: url('font.ttf') format('truetype');
+}
+
+* {
+    font-family: 'GamingFont', sans-serif;
+    /* text copy,select na ho website par */
+    /* For modern browsers */
+    user-select: none; 
+    /* For Safari */
+    -webkit-user-select: none; 
+    /* For Firefox */
+    -moz-user-select: none;
+    /* For Internet Explorer/Edge */
+    -ms-user-select: none; 
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #00c0ff;
+}
+#gameCanvas {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+}
+button {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    border: 1px solid #fff;
+    font-size: 10px;
+    height: 50px;
+    width: 200px;
+    z-index: 10;
+}
+#startBtn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border: 1px solid #fff;
+}
+#restartButton,#homeBtn {
+    margin-top: 20px;
+}
+#flyButton {
+    position: absolute;
+    height: 80vh;
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    background: transparent;
+    border: none;
+}
+#scoreDisplay {
+    position: absolute;
+    top: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 10;
+}
+#gameOverDiv {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}

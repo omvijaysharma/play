@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>info</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MX7JXHSNW6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MX7JXHSNW6');
+</script>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 2;
+    color: #fff;
+    /* text copy,select na ho website par */
+    /* For modern browsers */
+    user-select: none; 
+    /* For Safari */
+    -webkit-user-select: none; 
+    /* For Firefox */
+    -moz-user-select: none;
+    /* For Internet Explorer/Edge */
+    -ms-user-select: none; 
+}
+
+body, html {
+    background-color: #000;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#starCanvas {
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw; 
+}
+div {
+    margin: 10px; 
+    border-radius: 20px;
+}
+/* Image and Heading */
+.image-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-heading img {
+    width: 200px;
+    margin-right: 20px;
+}
+/* Button Styling */
+.btn-home {
+    font-size: 20px;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+}
+
+/* Version Information */
+.version-info,.copyright {
+    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    width: 80%;
+}
+
+.version-info h4,.copyright h4 {
+    margin-bottom: 10px;
+}
+
+.copyright h5 {
+    margin: 10px 0;
+}
+.version-info ul {
+    list-style: none;
+}
+
+.version-info li {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* developer Section */
+.developer {
+    border: 2px solid #fff;
+    padding: 20px;
+    width: 80%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.25);
+    margin-bottom: 25vh; 
+}
+
+.developer img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.developer button {
+    text-decoration: none;
+    text-align: left; 
+    color: white;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    border: 1px solid #fff;
+    margin: 3px;
+    width: 150px; 
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    
+    <canvas id="starCanvas"></canvas>
+
+    <div class="image-heading">
+        <img src="src/om.png" alt="">
+        <h1>Hello Brother!</h1>
+    </div>
+
+    <a href="index.html" class="btn-home">Home</a>
+
+    <div class="version-info">
+        <h4>¤ Version 1.1</h4>
+        <ul>
+            <li>Add prime spaceship</li>
+            <li>Add background stars move</li>
+            <li>Add horizontal line for challenge</li>
+            <li>Add higher score</li>
+            <li>Add present score</li>
+            <li>Add setting button</li>
+            <li>Add reset score and level in setting</li>
+            <li>Add Rank board for improvement</li>
+            <li>Add Developer Details in info</li>
+        </ul>
+    </div>
+    
+        <div class="copyright">
+            
+            <h4>¤ credit</h4>
+            <h5> • background music </h5>
+            <p> Cinematic Angry Background Music (NCS Release)
+            </p>
+        </div>
+        
+    <div class="developer">
+        <h3> Developer </h3>
+        </br>
+        <img src="src/om.png" alt="profile image on github">
+        </br>
+        <h4>om</h4>
+        <h6> Vijay Sharma </h6>
+        </br>
+            
+        <!-- github -->
+        <button onclick="window.open('https://github.com/omvijaysharma', '_blank')"> 
+            <h5>GITHUB</h5> 
+                <p>@omvijaysharma</p>
+            </button>
+            
+        <!-- instagram -->
+        <button onclick="window.open('https://instagram.com/om.vijay.sharma', '_blank')"> 
+            <h5>INSTAGRAM</h5> 
+                <p>@om.vijay.sharma</p>
+            </button>
+            
+        <!-- x -->
+        <button onclick="window.open('https://x.com/omvijaysharma', '_blank')"> 
+            <h5>X</h5> 
+                <p>@omvijaysharma</p>
+            </button>
+            
+    </div>
+    
+<script>
+    const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+        const numStars = 1080;
+        const stars = [];
+
+        // Set the canvas size to fill the window
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Create stars with random x positions and y positions
+        for (let i = 0; i < numStars; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+            // Draw stars
+            ctx.fillStyle = 'white'; // Set star color to white
+            stars.forEach(star => {
+                ctx.fillRect(star.x, star.y, 1, 1); // Draw star as a 1x1 pixel
+            });
+
+            // Move stars downwards
+            stars.forEach(star => {
+                star.y += 1; // Move star down by 1 pixel
+                // Reset star position to the top if it moves out of view
+                if (star.y > canvas.height) {
+                    star.y = 0; // Reset y position
+                    star.x = Math.random() * canvas.width; // Randomize x position
+                }
+            });
+
+            requestAnimationFrame(draw); // Request the next frame
+        }
+
+        draw(); // Start drawing
+
+</script></body>
+</html>

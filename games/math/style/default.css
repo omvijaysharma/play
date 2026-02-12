@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'GamingFont';
+  src: url('../font.ttf') format('truetype');
+}
+/* all */
+* { 
+    font-family: 'GamingFont', sans-serif;
+    /* text copy,select na ho website par */
+    /* For modern browsers */
+    user-select: none; 
+    /* For Safari */
+    -webkit-user-select: none; 
+    /* For Firefox */
+    -moz-user-select: none;
+    /* For Internet Explorer/Edge */
+    -ms-user-select: none;
+    
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    color: #fff;
+}
+body {background: #111;}
+
+/* loading page*/
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    background: #000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+/* all page */
+#backgroundCanvas {
+    background: #222; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+#level {
+    position: fixed;
+    top: 30px;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: auto;
+}
+#level::before {
+    content: 'level: ';
+}.top-div,
+.bottom-div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    z-index: 0;
+}
+.top-div {
+    top: 0;
+    left: 0;
+    height: 35vh;
+}
+.top-div p {
+    font-size: 20px;
+    margin: 50px 0 0 0;
+}
+.bottom-div {
+    bottom: 0;
+    right: 0;
+    height: 65vh;
+}
+.bottom-div button {
+    display: none;
+    width: 60%;
+    height: 50px;
+    margin: 5px;
+    background: transparent;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.5);
+    animation: none;
+&:active {width: 70%;}
+}
+
+@keyframes width {
+    0%   {width: 70%;}
+    100% {width: 60%;}
+}
+#questionDisplay {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+#chnage-question {
+    background: transparent;
+    position: fixed;
+    top: 33vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: none;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+&:active {animation: ROTATE 1s;}
+}
+@keyframes ROTATE {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+#chnage-question img {
+    height: 15px;
+    width: 15px;
+}
+#comment {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    bottom: 20px;
+    left: 50vw;
+    color: transparent;
+}
+#home-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #000;
+    padding: 5px;
+}
+#home-btn img {
+    height: 20px;
+    width: 20px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="starCanvas"></canvas> <!-- Canvas for stars -->
+    <button id="startBtn" onclick="start()"> start </button>
+    <canvas id="gameCanvas"></canvas>
+    <button id="flyButton"></button>
+    <div id="scoreDisplay">
+        <span id="score">0</span>
+    </div>
+    <div id="gameOverDiv">
+        <h2>Game Over</h2>
+        <button id="restartButton" onclick="resetGame()">Restart Game</button>
+        <button id="homeBtn" onclick="location.href='index.html'">home</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

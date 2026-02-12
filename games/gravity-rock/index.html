@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Rock Game</title>
+    <link rel="icon" href="Icon.png" type="image/png">
+    <link rel="stylesheet" href="rock.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MX7JXHSNW6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MX7JXHSNW6');
+</script>
+</head>
+<body>
+<!--=====================================================================main canvars==-->
+
+    <canvas id="gameCanvas"></canvas>
+    
+<!--=========================================================================main face=-->
+
+    <h1 id="levelNum">0</h1>
+    
+    <div class="challenge">
+        <p>fact :</p>
+        <p>you can't complete this game!</p>
+    </div>
+    
+<!--=============================================================================start=-->
+
+    <button id="startBtn" onclick="start()">Start</button>
+    
+<!--=============================================================================scoro=-->
+
+    <div class="scoroDiv">
+        <div>
+            <h1 id="scoreDisplay">0</h1>
+        </div>
+        <div id="HighTitle">Highest
+            <p id="gHigh"></p>
+        </div>
+    </div>
+    
+<!--===========================================================================setting=-->
+
+    <button id="settingBtn" onclick="setting()"> &#9881; </button>
+    <button id="settingXBtn" onclick="settingX()"> × </button>
+    
+    <div class="settingDiv">
+        
+<!-- reset scoro -->
+        <button onclick="resetScoro()"> Reset score </button>
+        <div class="resetScoroDiv">
+            <p>do you really want to reset score?</p>
+            <div>
+                <button onclick="resetScoreYes()">Yes</button>
+                <button onclick="resetScoroNo()">No</button>
+            </div>
+        </div>
+        
+<!-- info -->
+        <button onclick="location.href='info.html'"> Info </button>
+        
+    </div>
+    
+<!--=======================================================================controller==-->
+
+    <button id="leftBtn">
+        <p> -> </p>
+        <p> click for right </p>
+    </button>
+    <button id="rightBtn">
+        <p> <- </p>
+        <p> click for left </p>
+    </button>
+    
+<!--=========================================================================game over=-->
+
+    <button id="tryAgainBtn" onclick="resetGame()">Try Again</button>
+    <button onclick="reload()" id="home">home</button>
+    
+<!--==============================================================================ship=-->
+
+    <button id="shipBtn" onclick="showShipImageDiv(levelNum.textContent)"> ship <img src="ship/22-10.png" alt=""></button>
+    
+<!-- ships -->
+
+    <div class="shipImageDivFull">
+        <div class="shipImageDivFirst">
+            <p> 0 </p>
+            <button onclick="reload()">×</button>
+        </div>
+        <div class="shipImageDivSecond">
+            <div class="shipImageDiv">
+                <button onclick="imageOfShip('ship/15-1.png')">
+                    <img src="ship/15-1.png" alt="">
+                </button>
+                <button onclick="imageOfShip('ship/13-2.png')">
+                    <img src="ship/13-2.png" alt="">
+                    <p> 200 </p>
+                </button>
+                <button onclick="imageOfShip('ship/15-3.png')">
+                    <img src="ship/15-3.png" alt="">
+                    <p> 300 </p>
+                </button>
+                <button onclick="imageOfShip('ship/15-4.png')">
+                    <img src="ship/15-4.png" alt="">
+                    <p> 400 </p>
+                </button>
+                <button onclick="imageOfShip('ship/10-5.png')">
+                    <img src="ship/10-5.png" alt="">
+                    <p> 500 </p>
+                </button>
+                <button onclick="imageOfShip('ship/15-6.png')">
+                    <img src="ship/15-6.png" alt="">
+                    <p> 600 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-7.png')">
+                    <img src="ship/16-7.png" alt="">
+                    <p> 700 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-8.png')">
+                    <img src="ship/16-8.png" alt="">
+                    <p> 800 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-9.png')">
+                    <img src="ship/16-9.png" alt="">
+                    <p> 900 </p>
+                </button>
+                <button onclick="imageOfShip('ship/22-10.png')">
+                    <img src="ship/22-10.png" alt="">
+                    <p> 1,000 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-11.png')">
+                    <img src="ship/16-11.png" alt="">
+                    <p> 1,200 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-12.png')">
+                    <img src="ship/16-12.png" alt="">
+                    <p> 1,400 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-13.png')">
+                    <img src="ship/16-13.png" alt="">
+                    <p> 1,600 </p>
+                </button>
+                <button onclick="imageOfShip('ship/16-14.png')">
+                    <img src="ship/16-14.png" alt="">
+                    <p> 1,800 </p>
+                </button>
+                <button onclick="imageOfShip('ship/01-15.png')">
+                    <img src="ship/01-15.png" alt="">
+                    <p> 2,000 </p>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+<!--=============================================================================audio=-->
+
+<!-- scoro -->
+
+    <audio id="pointMusic">
+        <source src="src/score_sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+<!-- background -->
+
+    <audio id="backMusic" loop>
+        <source src="src/background_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script src="rock.js"></script>
+</body>
+</html>

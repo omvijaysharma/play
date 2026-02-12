@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> question ka answer </title>
+    <link rel="stylesheet" href="style/default.css">
+</head>
+<body>
+<!------------------------------------------------------------------------ main canvas -->
+<canvas id="backgroundCanvas">
+</canvas>
+
+<!----------------------------------------------------------------------- loading page -->    
+<div class="loading-page" style="display: flex;">
+    <p id="loading-text"></p>
+</div>
+    
+<!------------------------------------------------------------------------------ level -->
+<strong id="level">0</strong>
+
+<!---------------------------------------------------------------------------- top div -->
+    <div class="top-div">
+        
+        <!------------------- home button -->
+        <button id="home-btn" onclick="location.href='index.html'"><img src="src/img/home.svg" alt=""></button>
+        
+        <!---------------------- question -->
+        <p id="questionDisplay"> 0 + 0 </p>
+    
+    </div>
+
+<!------------------------------------------------------------------------- bottom div -->    
+    <div class="bottom-div">
+        <button onclick="useroption(1)">0</button>
+        <button onclick="useroption(2)">0</button>
+        <button onclick="useroption(3)">0</button>
+        <button onclick="useroption(4)">0</button>
+    </div>
+    
+        <!--------------- chnage question -->
+        <button id="chnage-question" onclick="game('changing')"><img src="src/img/circle.svg" alt=""></img></button>
+
+<!---------------------------------------------------------------------------- comment -->    
+    <p id="comment"> </p>
+</div>
+
+<!--------------------------------------------------------------------------------------->
+
+<!-- display always none div -->
+    <p id="answerP" style="margin: 10px;">0</p>
+<div style="display:none;">
+    <audio id="tap-sound" src="src/sound/tap.wav"></audio>
+    <audio id="point-sound" src="src/sound/point.wav"></audio>
+    <audio id="wrong-sound" src="src/sound/wrong.wav"></audio>
+</div>
+    
+<script src="js/default.js"></script>
+<script src="js/canvars.js"></script>
+<script src="js/math.js"></script>
+</body>
+</html>
