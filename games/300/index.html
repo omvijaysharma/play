@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Disable zoom on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Set browser theme color -->
+  <meta name="theme-color" content="#121212">
+  <title>Math 300</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Start Screen -->
+  <div class="screen" id="start-screen">
+    <div class="app-header">
+      <label id="small-logo">M</label>
+      <h1 class="app-title">MATH 300</h1>
+      <div class="menu">
+        <button class="btn icon" id="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="menu-content" id="menu-content">
+          <button class="menu-item" onclick="showInstructions()">Instructions</button>
+          <button class="menu-item pulse" onclick="showAbout()">About</button>
+          <button class="menu-item" onclick="resetProgress()">Reset Progress</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+        <span id="logo-level">M</span>
+      
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      
+      <div class="score-display" id="score-display">Level: 0/0</div>
+      
+      <div class="start-actions">
+        <button class="btn pulse" id="start-btn" onclick="startGame()">Start Game</button>
+        <button class="btn secondary" onclick="resetProgress()">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div class="screen hidden" id="game-screen">
+    <div class="app-header">
+      <div class="level-display">
+        <span class="level-label">Level</span>
+        <span id="level-display" class="level-number">1</span>
+      </div>
+      <button class="btn icon" onclick="goHome()">< Home</button>
+    </div>
+
+    <div class="game-content">
+      <div class="question-container">
+        <h2 id="question">What is 5 + 3?</h2>
+      </div>
+      
+      <div class="powerups">
+        <button class="powerup-btn" onclick="useFiftyFifty()"> 50:50 </button>
+        <button class="powerup-btn" onclick="useSkip()"> ⏭ </button>
+      </div>
+      
+      <div class="options-grid" id="options">
+          <button class="option" onclick="selectAnswer(this, '')"></button>
+          <button class="option" onclick="selectAnswer(this, '')"></button>
+          <button class="option" onclick="selectAnswer(this, '')"></button>
+          <button class="option" onclick="selectAnswer(this, '')"></button>
+    </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal hidden" id="modal">
+    <div class="modal-content">
+      <span class="close-btn pulse" onclick="goHome()">×</span>
+      <h2 id="modal-title">Modal Title</h2>
+      <p id="modal-text">Modal content goes here</p>
+      <div class="resetBtns">
+          <button class="btn secondary" onclick="goHome()"> cancel </button>
+          <button class="btn" onclick="confirmReset()"> Reset </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti Effect -->
+  <canvas id="confetti-canvas" class="hidden"></canvas>
+  <script src="list.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
