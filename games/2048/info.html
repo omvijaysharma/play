@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Page Title</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+body, html {
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    backdrop-filter: blur(5px); /* Apply blur effect to the entire background */
+<!-- text copy,select na ho website par -->
+  user-select: none; /* For modern browsers */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+}
+
+/* Image and Heading */
+.image-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 20px;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+
+.image-heading img {
+    width: 200px;
+    margin-right: 20px;
+}
+
+/* Button Styling */
+.btn-home {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+/* Version Information */
+.version-info {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+.version-info h4 {
+    margin-bottom: 10px;
+}
+
+.version-info ul {
+    list-style: none;
+}
+
+.version-info li {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.version-info li::before {
+    content: "• "; /* Inserts a * before each list item */
+    color: white; /* You can change the color if needed */
+    margin-right: 5px; /* Adds some spacing between the * and the text */
+}
+
+/* Credit Section */
+.credit {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    margin: 10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+.credit img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.credit button {
+    text-decoration: none;
+    text-align: left; 
+    color: white;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border-radius: 4px;
+    border: 1px solid #fff;
+    margin: 3px;
+    width: 150px; 
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="image-heading">
+        <img src="om.png" alt="">
+        <h1>Hello Brother!</h1>
+    </div>
+
+<a onclick="home()" class="btn-home">Home</a>
+
+    <div class="version-info">
+        <h4>¤ Version 1.1</h4>
+        <ul>
+ <li> Add ( 4 * 4 ) number of box. </li>
+ <li> Add background. </li>
+ <li> Add best and present score. </li>
+ <li> Add animation on +score. </li>
+ <li> Add info. </li>
+ <li> Add Developer details in info. </li>
+ <li> Add sound effect when score changed. </li>
+ <li> Add style. </li>
+        </ul>
+    </div>
+    
+    <div class="credit">
+        <h3> Developer </h3>
+        </br>
+        <img src="om.png" alt="profile image on github">
+        </br>
+        <h4>om</h4>
+        <h6> Vijay Sharma </h6>
+        </br>
+        
+        <!-- github -->
+        <button onclick="github()"> 
+            <h5>GITHUB</h5> <p>@omvijaysharma</p>
+            </button>
+            
+        <!-- instagram -->
+        <button onclick="instagram()"> 
+            <h5>INSTAGRAM</h5> <p>@om.vijay.sharma</p>
+            </button>
+            
+    </div>
+    
+<script>
+    function home() {
+        if (document.referrer) {
+            // If there is a referrer (previous page), go back to it
+            window.history.back();
+        } else {
+            // If there's no previous page, redirect to index.html
+            window.location.href = 'index.html';
+        }
+    }
+
+    function instagram() {
+        copyToClipboard('https://www.instagram.com/om.vijay.sharma?igsh=YzljYTk1ODg3Zg==');
+    }
+
+    function github() {
+        copyToClipboard('https://github.com/omvijaysharma');
+    }
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function() {
+            showNotification('Copied to clipboard!');
+        }).catch(function(err) {
+            // Handle error silently or show a notification
+            showNotification('Failed to copy. Please try again.');
+        });
+    }
+
+    function showNotification(message) {
+        // Create a notification element
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.position = 'fixed';
+        notification.style.bottom = '10px';
+        notification.style.left = '50%';
+        notification.style.transform = 'translateX(-50%)';
+        notification.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Semi-transparent black
+        notification.style.color = '#fff';
+        notification.style.padding = '10px';
+        notification.style.borderRadius = '5px';
+        notification.style.backdropFilter = 'blur(5px)'; // Apply blur effect
+        notification.style.zIndex = '1000';
+        document.body.appendChild(notification);
+
+        // Remove the notification after 3 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 1000);
+    }
+</script>
+</body>
+</html>
