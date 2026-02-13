@@ -124,13 +124,13 @@ function drawThreads() {
     const threadEndY = threadStartY - threadLength + Math.sin(threadOffset) * threadMotionLength;
     
 // First left
-    ctx.moveTo((rock.x + rock.width / 2) - threadGap / 2, threadStartY);
-    ctx.lineTo((rock.x + rock.width / 2) - threadGap / 2, threadEndY);
+    ctx.moveTo((rock.x + rock.width / 2) + threadGap / 2, threadStartY);
+    ctx.lineTo((rock.x + rock.width / 2) + threadGap / 2, threadEndY);
 
 //Second right
 
-    ctx.moveTo((rock.x + rock.width / 2) + threadGap / 2, threadStartY);
-    ctx.lineTo((rock.x + rock.width / 2) + threadGap / 2, threadEndY);
+    ctx.moveTo((rock.x + rock.width / 2) - threadGap / 2, threadStartY);
+    ctx.lineTo((rock.x + rock.width / 2) - threadGap / 2, threadEndY);
     
     ctx.strokeStyle = '#ff7300';
     ctx.lineWidth = threadWidth;
