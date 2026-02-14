@@ -267,8 +267,8 @@ let lARBtn = document.getElementById(btn);
     lARBtn.addEventListener('touchend', () => rock[direction] = false);
 };
 
-btnActions('leftBtn', 'moveLeft');
-btnActions('rightBtn', 'moveRight');
+btnActions('rightBtn', 'moveLeft');
+btnActions('leftBtn', 'moveRight');
 
 document.addEventListener('keydown', (event) => {
     if (!gameOver) rock[`move${event.key === 'ArrowLeft' ? 'Left' : 'Right'}`] = true;
